@@ -4,16 +4,25 @@ import java.util.Date;
 
 /**
  * The class <code>Note</code> represents a record in notebook.
+ * @author Andrey
  */
     public class Note {
     private String record;
     private Date date;
 
+    /**
+     * Constructs an note.
+     * @param record record value
+     * @param date date record
+     */
     public Note(String record, Date date) {
         this.record = record;
         this.date = date;
     }
 
+    /**
+     * Constructs an note.
+     */
     public Note() {
         this("", new Date());
     }

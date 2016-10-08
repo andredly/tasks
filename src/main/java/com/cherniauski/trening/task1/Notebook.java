@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * The class <code>Notebook</code> represents a notebook.
+ * @author Andrey
  */
 public class Notebook {
     private Note[] notes;
@@ -11,15 +12,24 @@ public class Notebook {
     private int countNote;
     private static int size;
 
+    /**
+     * Constructs an notebook with the specified initial capacity.
+     * @param size he initial capacity of the notebook
+     * @throws IllegalArgumentException if the specified initial capacity
+     *         is negative
+     */
     public Notebook(int size) {
         if (size <= 0) {
             System.out.println("Error, it is impossible to create a notebook of zero or negative length.");
-            throw new ArrayIndexOutOfBoundsException("Size: "+size+" incorrect");
+            throw new IllegalArgumentException("Size: "+size+" incorrect");
         }
         this.notes = new Note[size];
         this.size=size;
     }
 
+    /**
+     *Constructs an notebook with an initial capacity of ten.
+     */
     public Notebook() {
         this.notes = new Note[DEFAULT_CAPACITY];
         this.size=Integer.MAX_VALUE;
@@ -80,6 +90,7 @@ public class Notebook {
      * Returns the index of the first occurrence of the Note
      * in this Notebook, or -1 if this Notebook does not contain the Note.
      * @param note (not null)
+     * @return index returns the index of the first occurrence of the Note
      */
     public int indexOf(Note note) {
        isNull(note);
