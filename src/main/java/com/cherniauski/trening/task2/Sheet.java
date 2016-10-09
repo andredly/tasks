@@ -23,6 +23,11 @@ public class Sheet{
         employees.add(employee);
     }
 
+    public static void removeEmployee(Employee employee){
+        if(employee==null){throw new NullPointerException();}
+        employees.remove(employee);
+    }
+
     public static  Employee getEmployee(int personnelNumber){
         if(personnelNumber<=0){
             System.out.println("Personnel number incorrect");

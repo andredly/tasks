@@ -23,10 +23,6 @@ public class Employee {
         return personnelNumber;
     }
 
-    public void setPersonnelNumber(int personnelNumber) {
-        this.personnelNumber = personnelNumber;
-    }
-
     public String getName() {
         return name;
     }
@@ -37,10 +33,6 @@ public class Employee {
 
     public String getPosition() {
         return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public List<Stationery> getStationery() {
@@ -59,4 +51,15 @@ public class Employee {
                 ", position='" + position + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+
+        Employee employee = (Employee) o;
+
+        return  (personnelNumber != employee.personnelNumber);
+    }
+
 }

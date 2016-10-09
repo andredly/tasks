@@ -16,16 +16,8 @@ public class Stationery {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     @Override
@@ -46,15 +38,5 @@ public class Stationery {
         if (Double.compare(that.price, price) != 0) return false;
         return name != null ? name.equals(that.name) : that.name == null;
 
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = name != null ? name.hashCode() : 0;
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        return result;
     }
 }

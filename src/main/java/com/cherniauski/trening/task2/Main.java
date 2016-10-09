@@ -12,11 +12,10 @@ import java.util.List;
 public class Main {
 
 
-
     public static void main(String[] args) {
 
-        Employee manager1 = new Employee(1,"Petr","Manager");
-        Employee manager2 = new Employee(2,"Ivan","Manager");
+        Employee manager1 = new Employee(1, "Petr", "Manager");
+        Employee manager2 = new Employee(2, "Ivan", "Manager");
         Stationery stationery1 = new Stationery("Pen", 1.4);
         Stationery stationery2 = new Stationery("Pencil", 1.0);
         Stationery stationery3 = new Stationery("Paper", 5.4);
@@ -35,26 +34,25 @@ public class Main {
         Sheet.addEmployee(manager2);
 
 
-
-
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String line="";
+        String line = "";
         do {
             System.out.println("Welcome to the accounting program of stationery.");
-            System.out.println("Select options:(1,2,3,4,5,6)");
+            System.out.println("Select options:(1,2,3,4,5,6,7)");
             System.out.println("1.Get list of employees.");
             System.out.println("2.Get list of stationery employee.");
             System.out.println("3.Get total cost of stationery employee.");
             System.out.println("4.Adding employee.");
             System.out.println("5.Adding stationery employee.");
-            System.out.println("6.Exit");
+            System.out.println("6.Delete employee.");
+            System.out.println("7.Exit");
             line = "";
             try {
                 line = bufferedReader.readLine();
                 switch (line.trim()) {
                     case "1": {
                         List<Employee> employees = Sheet.getEmployees();
-                        if (employees.isEmpty()){
+                        if (employees.isEmpty()) {
                             System.out.println("Employees not on the list");
                             break;
                         }
@@ -74,12 +72,12 @@ public class Main {
                             break;
                         }
                         List<Stationery> stationery = Sheet.getStationery(employee);
-                        System.out.println("Employee name: "+employee.getName());
+                        System.out.println("Employee name: " + employee.getName());
                         System.out.println(stationery);
                         System.out.println();
                         break;
                     }
-                    case "3" :{
+                    case "3": {
                         System.out.println("Input personnel number employee?");
                         String number = bufferedReader.readLine();
                         int personnelNumber = Integer.parseInt(number.trim());
@@ -89,29 +87,29 @@ public class Main {
                             break;
                         }
                         double totalCostStationery = Sheet.getTotalCostStationery(employee);
-                        System.out.println("Employee name: "+employee.getName());
-                        System.out.println("Total cost stationery employee "+employee.getName()+" "+totalCostStationery);
+                        System.out.println("Employee name: " + employee.getName());
+                        System.out.println("Total cost stationery employee " + employee.getName() + " " + totalCostStationery);
                         System.out.println();
                         break;
                     }
-                    case "4":{
+                    case "4": {
                         System.out.println("Input personnel number employee?");
                         String number = bufferedReader.readLine();
                         int personnelNumber = Integer.parseInt(number.trim());
                         System.out.println("Input name?");
-                        String name=bufferedReader.readLine();
+                        String name = bufferedReader.readLine();
                         System.out.println("Input position?");
-                        String position=bufferedReader.readLine();
-                        Sheet.addEmployee(new Employee(personnelNumber,name,position));
-                        System.out.println("Success!");
+                        String position = bufferedReader.readLine();
+                        Sheet.addEmployee(new Employee(personnelNumber, name, position));
+                        System.out.println("Operation success!");
                         break;
                     }
-                    case "5":{
+                    case "5": {
                         System.out.println("Input name stationery?");
-                        String name=bufferedReader.readLine();
+                        String name = bufferedReader.readLine();
                         System.out.println("Input price stationery?");
-                        String price=bufferedReader.readLine();
-                        double priceStationery=Double.parseDouble(price.trim().replace(',','.'));
+                        String price = bufferedReader.readLine();
+                        double priceStationery = Double.parseDouble(price.trim().replace(',', '.'));
                         System.out.println("Input personnel number employee?");
                         String number = bufferedReader.readLine();
                         int personnelNumber = Integer.parseInt(number.trim());
@@ -121,19 +119,27 @@ public class Main {
                             break;
                         }
                         List<Stationery> stationery = Sheet.getStationery(employee);
-                        stationery.add(new Stationery(name,priceStationery));
+                        stationery.add(new Stationery(name, priceStationery));
                         employee.setStationery(stationery);
-                        System.out.println("Success!");
+                        System.out.println("Operation success!");
+                        break;
+                    }
+                    case "6": {
+                        System.out.println("Input personnel number employee?");
+                        String number = bufferedReader.readLine();
+                        int personnelNumber = Integer.parseInt(number.trim());
+                        Sheet.removeEmployee(Sheet.getEmployee(personnelNumber));
+                        System.out.println("Operation success!");
                         break;
                     }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-            }catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 System.out.println("Error. Input number!");
-            }catch (NullPointerException exc){
+            } catch (NullPointerException exc) {
             }
-        }while (!line.equals("6"));
+        } while (!line.equals("7"));
         try {
             bufferedReader.close();
         } catch (IOException e) {
