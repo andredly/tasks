@@ -85,5 +85,4 @@ import java.util.Date;
 
         return record.equals(note1.record) && date.equals(note1.date);
     }
-
 }
