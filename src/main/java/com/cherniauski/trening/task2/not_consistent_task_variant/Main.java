@@ -1,4 +1,4 @@
-package com.cherniauski.trening.task2;
+package com.cherniauski.trening.task2.not_consistent_task_variant;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class Main {
             System.out.println("2.Get list of stationery employee.");
             System.out.println("3.Get total cost of stationery employee.");
             System.out.println("4.Adding employee.");
-            System.out.println("5.Adding stationery employee.");
+            System.out.println("5.Adding stationery of employee.");
             System.out.println("6.Delete employee.");
             System.out.println("7.Exit");
             line = "";
@@ -131,6 +131,7 @@ public class Main {
                         Sheet.removeEmployee(Sheet.getEmployee(personnelNumber));
                         System.out.println("Operation success!");
                         break;
+
                     }
                 }
             } catch (IOException e) {

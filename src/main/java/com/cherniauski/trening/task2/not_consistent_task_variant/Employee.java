@@ -1,4 +1,4 @@
-package com.cherniauski.trening.task2;
+package com.cherniauski.trening.task2.not_consistent_task_variant;
 
 import java.util.ArrayList;
 import java.util.List;

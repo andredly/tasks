@@ -1,4 +1,4 @@
-package com.cherniauski.trening.task2;
+package com.cherniauski.trening.task2.correct_variant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class Sheet{
         employees.remove(employee);
     }
 
-    public static  Employee getEmployee(int personnelNumber){
+    public static Employee getEmployee(int personnelNumber){
         if(personnelNumber<=0){
             System.out.println("Personnel number incorrect");
             return null;

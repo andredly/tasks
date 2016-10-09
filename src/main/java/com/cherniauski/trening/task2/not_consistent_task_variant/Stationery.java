@@ -1,4 +1,4 @@
-package com.cherniauski.trening.task2;
+package com.cherniauski.trening.task2.not_consistent_task_variant;
 
 /**
  * Created by Andre on 09.10.2016.
