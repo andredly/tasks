@@ -31,7 +31,7 @@ public class Main {
         String line = "";
         do {
             System.out.println("Welcome to the accounting program of stationery.");
-            System.out.println(" Select options:(1,2)");
+            System.out.println("Select options:(1,2)");
             System.out.println("1.Enter");
             System.out.println("2.Exit");
             try {
@@ -102,8 +102,8 @@ public class Main {
 
                         for (Employee empl : employees) {
                             System.out.println(empl);
-                            System.out.println();
                         }
+                        System.out.println();
                         break;
                     }
                     case "2": {
@@ -112,7 +112,7 @@ public class Main {
                     }
                     case "3": {
                         List<Integer> personnelNumbers = SheetEmployees.getPersonnelNumbers();
-                        System.out.println("Last personnel number: " + personnelNumbers.get(personnelNumbers.size() - 1));
+                        System.out.println("Last busy personnel number: " + personnelNumbers.get(personnelNumbers.size() - 1));
                         System.out.println("Enter personnel number employee? ");
                         String number = bufferedReader.readLine();
                         int personnelNumber = Integer.parseInt(number.trim());
