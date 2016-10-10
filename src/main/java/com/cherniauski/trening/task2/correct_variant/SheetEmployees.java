@@ -1,21 +1,16 @@
 package com.cherniauski.trening.task2.correct_variant;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Andre on 09.10.2016.
  */
-public class Sheet{
+public class SheetEmployees {
 
-    private static List<Employee> employees=new ArrayList<>();
+    private static final Set<Employee> employees=new HashSet<>();
 
-    public static List<Employee> getEmployees() {
+    public static Set<Employee> getEmployees() {
         return employees;
-    }
-
-    public static void setEmployees(List<Employee> employees) {
-        Sheet.employees = employees;
     }
 
     public static void addEmployee(Employee employee){
@@ -43,22 +38,26 @@ public class Sheet{
         return tmpEmployee;
     }
 
-    public static List<Stationery> getStationery(Employee employee){
-        if (employee==null) {
-            System.out.println("Employee not found");
-            return null;}
-        return employee.getStationery();
-    }
-
     public static double getTotalCostStationery(Employee employee){
         if (employee==null) {
             System.out.println("Employee not found");
             return 0;}
-        List<Stationery> stationery = employee.getStationery();
+        Map<Stationery,Integer> map = employee.getStationery();
         double sum=0;
-        for (Stationery st:stationery){
-            sum=sum+st.getPrice();
+        for (Map.Entry<Stationery,Integer> set:map.entrySet()){
+            sum=sum+set.getKey().getPrice()*set.getValue();
         }
         return sum;
     }
+
+    public static List<Integer> getPersonnelNumbers(){
+        List<Integer> pn=new ArrayList<>();
+
+        for (Employee empl:employees) {
+            pn.add(empl.getPersonnelNumber());
+        }
+        Collections.sort(pn);
+        return pn;
+    }
+
 }
