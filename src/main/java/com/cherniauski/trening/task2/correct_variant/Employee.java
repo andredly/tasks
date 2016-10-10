@@ -46,8 +46,6 @@ import java.util.*;
         if (stationery==null||count<=0){
             System.out.println("Incorrect data");
             return;}
-        System.out.println(stationery.getName());
-        System.out.println(allStationeryForEmployee.get(stationery));
         if(!SheetStationery.containsStationery(stationery)) SheetStationery.addStationery(stationery);
         int startCount=0;
         if (allStationeryForEmployee.get(stationery)==null)startCount=0;
@@ -75,7 +73,7 @@ import java.util.*;
             return;
         }
         Integer countHaveEmployee = allStationeryForEmployee.get(stationery);
-        if ((countHaveEmployee-count)<0) {System.out.println("Count : "+count+ ", bat have "+countHaveEmployee);
+        if ((countHaveEmployee-count)<0) {System.out.println("Error. Count : "+count+ ", bat have "+countHaveEmployee);
             return;
         }
         allStationeryForEmployee.put(stationery,(countHaveEmployee-count));

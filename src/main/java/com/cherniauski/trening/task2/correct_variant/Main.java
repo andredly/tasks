@@ -63,7 +63,10 @@ public class Main {
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
+                    } catch (NumberFormatException ex) {
+                    System.out.println("Error. Input number!");
+                } catch (NullPointerException exc) {
+                }
                     break;
                 }
             }
@@ -108,6 +111,7 @@ public class Main {
                     }
                     case "2": {
                         SheetStationery.printAllListStationery();
+                        System.out.println();
                         break;
                     }
                     case "3": {
@@ -132,6 +136,7 @@ public class Main {
                             break;
                         }
                         SheetEmployees.addEmployee(employee);
+                        System.out.println();
                         break;
                     }
 
@@ -141,6 +146,7 @@ public class Main {
                         int personnelNumber = Integer.parseInt(number.trim());
                         SheetEmployees.removeEmployee(SheetEmployees.getEmployee(personnelNumber));
                         System.out.println("Operation success!");
+                        System.out.println();
                         break;
 
                     }
@@ -178,6 +184,7 @@ public class Main {
                                     + ", count " + stationeryIntegerEntry.getValue()
                                     + ", price " + stationeryIntegerEntry.getKey().getPrice());
                         }
+                        System.out.println();
                         break;
                     }
                     case "2": {
@@ -195,6 +202,7 @@ public class Main {
                         String count = bufferedReader.readLine();
                         int countStationery = Integer.parseInt(count);
                         employee.putStationery(new Stationery(name, priceStationery), countStationery);
+                        System.out.println("");
                         break;
                     }
                     case "3": {
@@ -212,15 +220,18 @@ public class Main {
                         String count = bufferedReader.readLine();
                         int countStationery = Integer.parseInt(count);
                         employee.removeStationery(name, priceStationery, countStationery);
+                        System.out.println();
                         break;
                     }
                     case "4": {
                         double totalCostStationery = SheetEmployees.getTotalCostStationery(employee);
                         System.out.println("Total cost stationery: " + totalCostStationery);
+                        System.out.println();
                         break;
                     }
                     case "5": {
                         SheetStationery.printAllListStationery();
+                        System.out.println();
                         break;
                     }
                 }
