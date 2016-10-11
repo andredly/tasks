@@ -10,7 +10,7 @@ import java.util.TreeMap;
  * Created by Andre on 10.10.2016.
  */
 public class BeginnerSetSorted {
-        public static final TreeMap<Stationery, Integer> SORTED_BEGINER_SET=new TreeMap<>();
+        public static final Map<Stationery, Integer> SORTED_BEGINER_SET=new TreeMap<>();
 
         static {
                 SORTED_BEGINER_SET.put(new AutomaticBallPen("Automatic Pen \"Joy\"", 1.3), 1);
