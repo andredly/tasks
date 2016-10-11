@@ -1,9 +1,9 @@
-package com.cherniauski.trening.task3;
+package com.cherniauski.trening.task4;
 
 /**
  * Created by Andre on 10.10.2016.
  */
-public class Sticker extends PaperStationery{
+public class Sticker extends PaperStationery {
     private String name;
     private double price;
 
@@ -48,5 +48,11 @@ public class Sticker extends PaperStationery{
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+    @Override
+    public int compareTo(Stationery o) {
+        int result=Double.compare(price,o.getPrice());
+        if (result!=0)return result;
+        return name.compareTo(o.getName());
     }
 }

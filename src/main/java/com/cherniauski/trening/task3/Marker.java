@@ -27,4 +27,26 @@ public class Marker extends WritingStationery {
                 ", price=" + price +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Marker marker = (Marker) o;
+
+        if (Double.compare(marker.price, price) != 0) return false;
+        return name != null ? name.equals(marker.name) : marker.name == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }

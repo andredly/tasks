@@ -1,9 +1,12 @@
-package com.cherniauski.trening.task3;
+package com.cherniauski.trening.task4;
+
+import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Andre on 10.10.2016.
  */
-public abstract class Stationery {
+public abstract class Stationery implements Comparable<Stationery> {
     private String name;
     private double price;
 
@@ -14,4 +17,6 @@ public abstract class Stationery {
     public double getPrice() {
         return price;
     }
+
+
 }

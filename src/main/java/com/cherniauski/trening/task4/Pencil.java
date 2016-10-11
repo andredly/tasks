@@ -1,13 +1,13 @@
-package com.cherniauski.trening.task3;
+package com.cherniauski.trening.task4;
 
 /**
  * Created by Andre on 10.10.2016.
  */
-public class Sticker extends PaperStationery{
+public class Pencil extends WritingStationery {
     private String name;
     private double price;
 
-    public Sticker(String name, double price) {
+    public Pencil(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -22,7 +22,7 @@ public class Sticker extends PaperStationery{
 
     @Override
     public String toString() {
-        return "Sticker{" +
+        return "Pencil{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';
@@ -33,10 +33,10 @@ public class Sticker extends PaperStationery{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Sticker sticker = (Sticker) o;
+        Pencil pencil = (Pencil) o;
 
-        if (Double.compare(sticker.price, price) != 0) return false;
-        return name != null ? name.equals(sticker.name) : sticker.name == null;
+        if (Double.compare(pencil.price, price) != 0) return false;
+        return name != null ? name.equals(pencil.name) : pencil.name == null;
 
     }
 
@@ -48,5 +48,11 @@ public class Sticker extends PaperStationery{
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+    @Override
+    public int compareTo(Stationery o) {
+        int result=Double.compare(price,o.getPrice());
+        if (result!=0)return result;
+        return name.compareTo(o.getName());
     }
 }
