@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by Andre on 09.10.2016.
  */
-    public class Employee {
+class Employee {
     private int personnelNumber;
     private String name;
     private String position;

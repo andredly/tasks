@@ -10,7 +10,7 @@ public class Sheet{
 
     private static List<Employee> employees=new ArrayList<>();
 
-    public static List<Employee> getEmployees() {
+    static List<Employee> getEmployees() {
         return employees;
     }
 
@@ -18,17 +18,17 @@ public class Sheet{
         Sheet.employees = employees;
     }
 
-    public static void addEmployee(Employee employee){
+    static void addEmployee(Employee employee){
         if(employee==null){throw new NullPointerException();}
         employees.add(employee);
     }
 
-    public static void removeEmployee(Employee employee){
+    static void removeEmployee(Employee employee){
         if(employee==null){throw new NullPointerException();}
         employees.remove(employee);
     }
 
-    public static Employee getEmployee(int personnelNumber){
+    static Employee getEmployee(int personnelNumber){
         if(personnelNumber<=0){
             System.out.println("Personnel number incorrect");
             return null;
@@ -43,14 +43,14 @@ public class Sheet{
         return tmpEmployee;
     }
 
-    public static List<Stationery> getStationery(Employee employee){
+    static List<Stationery> getStationery(Employee employee){
         if (employee==null) {
             System.out.println("Employee not found");
             return null;}
         return employee.getStationery();
     }
 
-    public static double getTotalCostStationery(Employee employee){
+    static double getTotalCostStationery(Employee employee){
         if (employee==null) {
             System.out.println("Employee not found");
             return 0;}

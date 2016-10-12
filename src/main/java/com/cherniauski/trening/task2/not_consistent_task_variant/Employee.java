@@ -12,14 +12,14 @@ public class Employee {
     private String position;
     private List<Stationery> stationery;
 
-    public Employee(int personnelNumber, String name, String position) {
+    Employee(int personnelNumber, String name, String position) {
         this.personnelNumber = personnelNumber;
         this.name = name;
         this.position = position;
         this.stationery=new ArrayList<>();
     }
 
-    public int getPersonnelNumber() {
+    int getPersonnelNumber() {
         return personnelNumber;
     }
 

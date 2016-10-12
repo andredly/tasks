@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Andre on 09.10.2016.
  */
-public class SheetEmployees {
+class SheetEmployees {
 
     private static final Set<Employee> employees=new HashSet<>();
 

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Andre on 09.10.2016.
  */
-public class SheetStationery{
+class SheetStationery{
 
     private static final Set<Stationery> listAllStationery=new HashSet<>();
 
