@@ -1,63 +1,34 @@
 package com.cherniauski.trening.task5;
 
-import com.cherniauski.trening.task5.mark.Mark;
-import com.cherniauski.trening.task5.mark.Num;
-import com.cherniauski.trening.task5.mark.Re;
-import com.cherniauski.trening.task5.mark.Real;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/**
- * Created by ivc4 on 11.10.2016.
- */
 public enum Discipline {
     OPERATING_SYSTEM {
-        Mark<Real> mark;
-        @Override
-        public Mark get() {
-            return this.mark;
-        }
 
-        @Override
-        public void set(Mark mark) {
-            this.mark=mark;
-        }
-    }, COMPUTER_NETWORKS{
-        Mark mark;
-        @Override
-        public Mark get() {
-            return this.mark;
-        }
-        @Override
-        public void set(Mark mark) {
-            this.mark=mark;
-        }
+    }, COMPUTER_NETWORKS {
 
-    },DATABASE_SYSTEM{
-        Mark mark;
-        @Override
-        public Mark get() {
-            return this.mark;
-        }
-        @Override
-        public void set(Mark mark) {
-            this.mark=mark;
-        }
+    }, DATABASE_SYSTEM {
 
     }, WEB_TECHNOLOGY{
-        Mark mark;
-        @Override
-        public Mark get() {
-            return this.mark;
-        }
-        @Override
-        public void set(Mark mark) {
-            this.mark=mark;
-        }
 
     };
+    Map<Discipline,List<Group>> map=new HashMap<>();
 
-    Discipline() {
+    public void addGroup(Group group){
+        List<Group> list=new ArrayList<>();
+        if (map.get(this)==null){
+            list.add(group);
+            map.put(this,list);
+        }else {
+            map.get(this).add(group);
+        }
+    }
+    public List<Group> getGroupOfDiscipline(){
+
+        return map.get(this);
     }
 
-    public abstract Mark get();
-    public abstract void set(Mark mark);
 }
