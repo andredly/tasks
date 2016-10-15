@@ -38,27 +38,25 @@ public class Main {
         Journal<Integer> journal3 = new Journal<>(Discipline.OPERATING_SYSTEM);
         Journal<Float> journal4 = new Journal<>(Discipline.WEB_TECHNOLOGY);
         for (int i = 0; i < 5; i++) {
-            Random random = new Random(10);
-            System.out.println((int) (Math.random() * 10));
-            journal1.addMark(list.get(0), (double) (Math.random() * 100));
-            journal1.addMark(list.get(1), (double) (Math.random() * 100));
-            journal1.addMark(list.get(2), (double) (Math.random() * 100));
-            journal1.addMark(list.get(3), (double) (Math.random() * 100));
-            journal1.addMark(list.get(4), (double) (Math.random() * 100));
+            journal1.addMark(list.get(0), (double) (Math.random() * 10));
+            journal1.addMark(list.get(1), (double) (Math.random() * 10));
+            journal1.addMark(list.get(2), (double) (Math.random() * 10));
+            journal1.addMark(list.get(3), (double) (Math.random() * 10));
+            journal1.addMark(list.get(4), (double) (Math.random() * 10));
         }
         for (int i = 3; i < 9; i++) {
-            journal2.addMark(list.get(3), (long) (Math.random() * 100));
-            journal2.addMark(list.get(4), (long) (Math.random() * 100));
-            journal2.addMark(list.get(5), (long)(Math.random() * 100));
-            journal2.addMark(list.get(6), (long) (Math.random() * 100));
-            journal2.addMark(list.get(7), (long) (Math.random() * 100));
-            journal2.addMark(list.get(8), (long) (Math.random() * 100));
+            journal2.addMark(list.get(3), (long) (Math.random() * 10));
+            journal2.addMark(list.get(4), (long) (Math.random() * 10));
+            journal2.addMark(list.get(5), (long)(Math.random() * 10));
+            journal2.addMark(list.get(6), (long) (Math.random() * 10));
+            journal2.addMark(list.get(7), (long) (Math.random() * 10));
+            journal2.addMark(list.get(8), (long) (Math.random() * 10));
         }
         for (int i = 5; i < 10; i++) {
-            journal3.addMark(list.get(5), (int) (Math.random() * 100));
-            journal3.addMark(list.get(6), (int) (Math.random() * 100));
-            journal3.addMark(list.get(7), (int) (Math.random() * 100));
-            journal3.addMark(list.get(8), (int) (Math.random() * 100));
+            journal3.addMark(list.get(5), (int) (Math.random() * 10));
+            journal3.addMark(list.get(6), (int) (Math.random() * 10));
+            journal3.addMark(list.get(7), (int) (Math.random() * 10));
+            journal3.addMark(list.get(8), (int) (Math.random() * 10));
         }
         for (int i = 2; i < 8; i++) {
             journal4.addMark(list.get(2), (float) (Math.random() * 100));
@@ -78,6 +76,7 @@ public class Main {
         monitoringStudentProgress.printResultStudentProgress(list.get(4));
         monitoringStudentProgress.printResultStudentProgress(list.get(2));
         monitoringStudentProgress.printResultStudentProgress(list.get(3));
+        monitoringStudentProgress.printResultStudentProgress(list.get(5));
 
 
     }
