@@ -28,7 +28,6 @@ public class MonitoringStudentProgress<T extends Number> {
 
     public void printResultStudentProgress(Student student) {
         for (Journal journal : journals) {
-
             List<T> marks = journal.getMarks(student);
             if (marks.isEmpty()) break;
             double valueMarkDouble = 0;

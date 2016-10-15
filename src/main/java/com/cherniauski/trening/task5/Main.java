@@ -77,8 +77,6 @@ public class Main {
         monitoringStudentProgress.printResultStudentProgress(list.get(2));
         monitoringStudentProgress.printResultStudentProgress(list.get(3));
         monitoringStudentProgress.printResultStudentProgress(list.get(5));
-
-
     }
 }
 
