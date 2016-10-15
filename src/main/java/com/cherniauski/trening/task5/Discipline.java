@@ -1,34 +1,34 @@
 package com.cherniauski.trening.task5;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 public enum Discipline {
-    OPERATING_SYSTEM {
+    OPERATING_SYSTEM("Operating system") {
 
-    }, COMPUTER_NETWORKS {
+    }, COMPUTER_NETWORKS("Computer networks") {
 
-    }, DATABASE_SYSTEM {
+    }, DATABASE_SYSTEM("Data system") {
 
-    }, WEB_TECHNOLOGY{
+    }, WEB_TECHNOLOGY("Web Technology") {
 
     };
-    Map<Discipline,List<Group>> map=new HashMap<>();
-
-    public void addGroup(Group group){
-        List<Group> list=new ArrayList<>();
-        if (map.get(this)==null){
-            list.add(group);
-            map.put(this,list);
-        }else {
-            map.get(this).add(group);
-        }
+    Map<Discipline, Group> map = new HashMap<>();
+    String typeDiscipline;
+    Discipline(String typeDiscipline) {
+        this.typeDiscipline=typeDiscipline;
     }
-    public List<Group> getGroupOfDiscipline(){
 
+    public void addGroup(Group group) {
+        map.put(this,group);
+    }
+
+    public Group getGroupOfDiscipline() {
         return map.get(this);
+    }
+
+    public String getTypeDiscipline(){
+        return typeDiscipline;
     }
 
 }

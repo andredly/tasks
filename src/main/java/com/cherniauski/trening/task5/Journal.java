@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by ivc4 on 12.10.2016.
  */
-public class Journal<T> {
+public class Journal<T extends Number> {
     private Map<Student, List<T>> map;
     private Discipline discipline;
 
@@ -19,6 +19,10 @@ public class Journal<T> {
 
     public void addMark(Student student, T mark) {
         if (student == null) throw new NullPointerException();
+        if (!discipline.getGroupOfDiscipline().checkStudentInGroup(student)){
+            System.out.println("Student not belongs group");
+            throw  new IllegalArgumentException();
+        }
         List<T> list = new ArrayList<>();
         if (map.get(student) == null) {
             list.add(mark);
@@ -28,10 +32,11 @@ public class Journal<T> {
         }
     }
 
-    public List<T> getMark(Student student) {
+    public List<T> getMarks(Student student) {
+        List<T> list=new ArrayList<>();
         if (student == null) throw new NullPointerException();
         if (map.get(student) == null) {
-            return new ArrayList<>();
+            return list;
         }
         return map.get(student);
     }
@@ -47,14 +52,25 @@ public class Journal<T> {
         else list.clear();
     }
 
-    private boolean checkStudentInGroup(Student student){
-        List<Group> groups=discipline.getGroupOfDiscipline();
-        for (Group group:groups){
-            //todo
-        }
-        return false;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Journal)) return false;
+
+        Journal<?> journal = (Journal<?>) o;
+
+        if (map != null ? !map.equals(journal.map) : journal.map != null) return false;
+        return discipline == journal.discipline;
+
     }
 
+    @Override
+    public int hashCode() {
+        int result = map != null ? map.hashCode() : 0;
+        result = 31 * result + (discipline != null ? discipline.hashCode() : 0);
+        return result;
+    }
 }
 
 
