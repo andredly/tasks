@@ -1,6 +1,5 @@
 package com.cherniauski.trening.task5;
 
-import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -75,9 +74,10 @@ public class Main {
         set.add(journal3);
         set.add(journal4);
         MonitoringStudentProgress monitoringStudentProgress=new MonitoringStudentProgress(set);
+
         monitoringStudentProgress.printResultStudentProgress(list.get(4));
-//        monitoringStudentProgress.printResultStudentProgress(list.get(2));
-//        monitoringStudentProgress.printResultStudentProgress(list.get(3));
+        monitoringStudentProgress.printResultStudentProgress(list.get(2));
+        monitoringStudentProgress.printResultStudentProgress(list.get(3));
 
 
     }
